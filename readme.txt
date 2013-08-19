@@ -1,3 +1,8 @@
+Forked golang support
+=====================
+
+* Converts tabs to spaces for editing, writes output using gofmt.
+
 Vim plugins for Go (http://golang.org)
 ======================================
 
