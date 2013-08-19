@@ -21,6 +21,9 @@ endfunction
 
 function! s:gofiletype_writepre()
   silent %!gofmt
+  if v:shell_error
+    silent undo
+  endif
 endfunction
 
 function! s:gofiletype_writepost()
