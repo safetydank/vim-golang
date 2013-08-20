@@ -20,6 +20,7 @@ function! s:gofiletype_post()
 endfunction
 
 function! s:gofiletype_writepre()
+  let b:lastpos = getpos('.')
   silent %!gofmt
   if v:shell_error
     silent undo
@@ -28,6 +29,7 @@ endfunction
 
 function! s:gofiletype_writepost()
   silent retab
+  call setpos('.', b:lastpos)
 endfunction
 
 au BufNewFile *.go setlocal filetype=go fileencoding=utf-8 fileformat=unix
